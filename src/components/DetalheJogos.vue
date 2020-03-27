@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    name:"Header",
+    name:"DetalheJogos",
     component:{},
     computed:{},
     methods:{},

@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    name:"Header",
+    name:"EditJogos",
     component:{},
     computed:{},
     methods:{},
