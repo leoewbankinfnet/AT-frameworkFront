@@ -1,27 +1,14 @@
 <template>
   <div>
-    <div class="header">
+    
+  <div class="header">
       <b-navbar id="navbar" toggleable="lg" type="dark" variant="info">
         <b-navbar-brand id="Logo-titulo" href="/"><img src="../assets/logo.jpg" id="logo"> Jogoteca Ferozmente Animal</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item href="/">Home</b-nav-item>
-            <b-nav-item href="/jogar">Jogar</b-nav-item>
-            <b-nav-item-dropdown center>
-              <template v-slot:button-content>
-                <em>Usuário</em>
-              </template>
-              <b-dropdown-item href="/login">Login</b-dropdown-item>
-              <b-dropdown-item href="/cadastro">Cadastro</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item href="/cartas">Cartas</b-nav-item>
-        
-          </b-navbar-nav>
-        </b-collapse>
       </b-navbar>
-    </div>
+    </div> 
+
+
 
   </div>
 </template>
@@ -30,44 +17,29 @@
 export default {
   name: 'Header',
 }
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "10px 10px";
-    document.getElementById("Logo-titulo").style.fontSize = "26px";
-    document.getElementById("logo").style.width = "30px";
-  } else {
-    document.getElementById("navbar").style.padding = "15px 10px";
-    document.getElementById("Logo-titulo").style.fontSize = "45px";
-    document.getElementById("logo").style.width = "45px";
-  }
-}
-
 
 </script>
 
 <style scoped>
 
 .header{
-  display: flex;
-  transition: 0.5s; /* Adds a transition effect when the padding is decreased */
+  display: block;
   width: auto;
-  height: auto;
+  height: 65px;
 }
+
 #logo{
-  width:350px;
+  width:15%;
   margin-left: 0;
   border-radius: 99%;
   align-items:left;
   transition: 0.5s;
 }
 
+
 .navbar{
   background-color: #2f4f4f!important;
   overflow: hidden;
-  padding: 15px 10px; /* Large padding which will shrink on scroll (using JS) */
-  transition: 0.5s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
   width: 100%;
   height: auto;
@@ -79,8 +51,9 @@ ul.navbar-nav {
   justify-content: space-around;
   width: 80%;
   align-items:center; 
-  font-size: 21px
+  font-size: 21px;
 }
+
 
 a{
   float: left;
@@ -89,15 +62,28 @@ a{
   font-size: 18px;
   border-radius: 4px;
 }
-#nav-collapse{
-  font-family: Beckman-free;
-  justify-content: space-around;
-}
+
 #Logo-titulo{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 300%;
+  font-size: 250%;
   padding: 10px;
   transition: 0.5s;
+  text-align:center;
+  margin:0 auto;
 }
+
+@media only screen and (max-width: 400px) {
+  #Logo-titulo {
+    font-size:1.5EM;
+    padding:6px;
+  }
+  #logo{
+    width:20%;
+  }
+  .header{
+    height:20px;
+  }
+}
+
 
 </style>
