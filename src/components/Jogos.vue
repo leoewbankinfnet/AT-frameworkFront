@@ -1,6 +1,39 @@
 <template>
-  <div class="home">
+  <div class="jogos">
     <Header/>
+
+
+    <b-button> Adicionar novo jogo </b-button>
+    
+    
+    <section class="Arq_Jogos">
+       <div v-for ="jogos in allJogos" :key="jogos.id" class="Cartas">
+     
+      <b-card
+          :title="jogos.nome"
+          :img-src="jogos.img"
+          :img-alt="jogos.nome"
+          img-top
+          tag="article"
+          style="max-width: 13rem;"
+          class="md-2"
+          :style="jogos.nota>7?'border:3px solid green;':jogos.nota<5?'border:3px solid red;':'border:3px solid yellow;'"
+         
+          >
+        <b-card-text>
+             <router-link
+              tag='h5'
+              class="jogos-title"
+              :to="{name:'jogos', params:{id:jogos.id}}">
+              <b-button id="btn_det"> Detalhes </b-button>
+              
+             </router-link>
+        </b-card-text>
+      </b-card>
+       </div>
+
+
+    </section>
 
 
 
@@ -10,15 +43,24 @@
 
 <script>
 import Header from '../components/Header'
+import {mapGetters, mapActions} from "vuex"
 export default {
   name: 'Jogos',
   components:{
     Header
   },
-  props: {
- 
-  }
+  props: {},
+  methods:{
+    ...mapActions(["fetchJogos"])
+  },
+  computed:
+    mapGetters(["allJogos"]),
+    created(){
+      this.fetchJogos()
+    }
 }
+
+
 </script>
 
 <style scoped>
@@ -36,4 +78,48 @@ li {
 a {
   color: #42b983;
 }
+
+.Arq_Jogos{
+  display: flex;
+  margin-left:5px;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 117px;
+  margin:0 auto;
+  justify-content: center;
+  
+}
+img {
+  height:305px;
+}
+.Cartas{
+  display: flex;
+  margin:5px;
+  text-align:center;
+  font-family:"Beckman-free";
+  height:450px;
+}
+#info_card{
+  display:flex;
+  justify-content:center;
+  font-family:"Conversation" ;
+  font-size:1.5EM;
+  position:fixed;
+  bottom:0px;
+}
+
+#btn_det{
+    position: absolute;
+   
+    width: 100px;
+    margin-left: -50px;
+    bottom:0px;
+    margin-bottom:10px;
+  
+  
+  
+}
+
+
+
 </style>

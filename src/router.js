@@ -4,6 +4,7 @@ Vue.use(VueRouter);
 
 import Home from "./components/Home"
 import Jogos from './components/Jogos.vue'
+import DetalheJogos from './components/DetalheJogos.vue'
 
 export default new VueRouter({
     mode:"history",
@@ -16,9 +17,15 @@ export default new VueRouter({
         
         {
             path: '/arquivo',
-            name:'jogos',
+            name:'arquivo',
             component:Jogos
         },
+        {
+            path: '/jogos/:id',
+            name:'jogos',
+            component:DetalheJogos
+
+        }
     ]
     
 })

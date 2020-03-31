@@ -1,12 +1,14 @@
 const state = {
-    jogos: [{"id":"1","nome":"GTA V","genero":"ação", "nota":"10","img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.g2a.com%2Fgrand-theft-auto-v-pc-rockstar-key-global-i10000000788017&psig=AOvVaw3YI5_XxJRlUWMHsflZW2xr&ust=1585653288315000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPj7lfuIwugCFQAAAAAdAAAAABAH"},
-            {"id":"2","nome":"Binding of Isaac Rebirth","genero":"ação","nota":"10","img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fp%2Fthe-binding-of-isaac-rebirth%2Fbqd45pqr4f4j&psig=AOvVaw1IuS2mMzHSK9UNp7HB8VWI&ust=1585653409597000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDFm7SJwugCFQAAAAAdAAAAABAP"},
+    jogos: [{"id":"1","nome":"GTA V","genero":"Ação", "nota":"10","img":"https://http2.mlstatic.com/gta-5-gta-v-ps4-pronta-entrega-em-portugus-midia-fisica-D_NQ_NP_629809-MLB32515401168_102019-F.jpg","console":"Playstation 4"},
+            {"id":"2","nome":"Binding of Isaac Afterbirth","genero":"Ação","nota":"6","img":"https://s3.amazonaws.com/comparegame/thumbnails/42814/large.jpg", "console":"Nintendo Switch"},
+            {"id":"3","nome":"Agony","genero":"Sobrevivência","nota":"3","img":"https://s3.amazonaws.com/comparegame/thumbnails/43916/large.jpg", "console":"Playstation 4"}
     
     ]
 }
 
-const getter = {
-    TodosJogos: state => state.jogos
+const getters = {
+    allJogos: state => state.jogos,
+    jogosID: (state) => (id) => (state.jogos.filter(t => t.id == id))[0]
 }
 
 const actions = {
@@ -20,7 +22,7 @@ const mutations = {
 }
 
 export default {
-    getter,
+    getters,
     state,
     mutations,
     actions
