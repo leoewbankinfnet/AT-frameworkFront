@@ -1,9 +1,9 @@
 <template>
-  <div class="jogos">
+  <div id="fundo_arq">
     <Header/>
 
 
-    <b-button> Adicionar novo jogo </b-button>
+    <b-button> <AddJogos/> </b-button>
     
     
     <section class="Arq_Jogos">
@@ -17,7 +17,9 @@
           tag="article"
           style="max-width: 13rem;"
           class="md-2"
-          :style="jogos.nota>7?'border:3px solid green;':jogos.nota<5?'border:3px solid red;':'border:3px solid yellow;'"
+          :style="jogos.nota>7?'border:5px solid green;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'
+          :jogos.nota<5?' background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;border:5px solid red;'
+          :'border:5px solid yellow;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'"
          
           >
         <b-card-text>
@@ -43,11 +45,13 @@
 
 <script>
 import Header from '../components/Header'
+import AddJogos from '../components/AddJogos'
 import {mapGetters, mapActions} from "vuex"
 export default {
   name: 'Jogos',
   components:{
-    Header
+    Header,
+    AddJogos
   },
   props: {},
   methods:{
@@ -88,6 +92,7 @@ a {
   margin:0 auto;
   justify-content: center;
   
+  
 }
 img {
   height:305px;
@@ -114,11 +119,20 @@ img {
     width: 100px;
     margin-left: -50px;
     bottom:0px;
-    margin-bottom:10px;
-  
-  
-  
+    margin-bottom:10px;  
 }
+
+#fundo_arq{
+  background:url("../assets/fogo.jpeg");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  
+
+  height: 100vh;
+  background-repeat: inherit;
+}
+
 
 
 

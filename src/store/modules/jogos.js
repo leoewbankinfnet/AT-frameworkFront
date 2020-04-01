@@ -14,11 +14,38 @@ const getters = {
 const actions = {
     fetchJogos({commit}) {
         commit("setJogos")
-    }
+    },
+    addJogos({commit} , add_jogo ){
+        const new_ind= state.jogos.length+1
+        const response = {
+            "id":new_ind,
+            "nome":add_jogo.nome,
+            "genero":add_jogo.genero,
+            "nota":add_jogo.nota,
+            "img":add_jogo.img,
+            "console":add_jogo.console
+        }
+        commit("novoJogo",response)   
+      },
+      removeJogo({commit}, id){
+          commit("deletarJogo",id)
+      },
+      atualizarJogo({commit},attJogo){
+          commit("atualizarJogo",attJogo)
+      },
 }
 
 const mutations = {
-    setJogos: (state) => state.jogos
+    setJogos: (state) => state.jogos,
+    novoJogo:(state,jogo) => state.jogos.push(jogo),
+    removeJogo:(state,id) => (state.jogos==state.jogos.filter(t=> t.id !==id)),
+    atualizarJogo:(state,attJogo)=> { 
+        const ind = state.jogos.findIndex(t=> t.id == attJogo.id)
+        if (ind !==-1){
+            state.jogos.splice(ind,1,attJogo)
+        }
+    },
+    
 }
 
 export default {

@@ -25,7 +25,7 @@ export default {
 .header{
   display: block;
   width: auto;
-  height: 65px;
+  height: 40px;
 }
 
 #logo{
