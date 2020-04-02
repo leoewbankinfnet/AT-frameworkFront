@@ -76,10 +76,21 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Life+Savers&display=swap');
 
+@font-face {
+  font-family: 'Revamped';
+  src: url('../assets/revamped/Revamped.otf');
+}
+
+@font-face {
+  font-family:'Bathrind' ;
+  src: url('../assets/bathrind/Bathrind.otf');
+}
+
 #addd{
   margin:0 auto;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%);
+  font-family: 'Revamped',Arial, Helvetica, sans-serif;
 }
  #form{
   margin:0 auto;

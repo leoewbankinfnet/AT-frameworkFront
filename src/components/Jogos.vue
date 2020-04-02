@@ -1,6 +1,6 @@
 <template>
   <div id="fundo_arq">
-    <Header/>
+    <Header2/>
 
 
     <b-button> <AddJogos/> </b-button>
@@ -44,13 +44,13 @@
 </template>
 
 <script>
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 import AddJogos from '../components/AddJogos'
 import {mapGetters, mapActions} from "vuex"
 export default {
   name: 'Jogos',
   components:{
-    Header,
+    Header2,
     AddJogos
   },
   props: {},
@@ -91,6 +91,7 @@ a {
   margin-top: 117px;
   margin:0 auto;
   justify-content: center;
+  width:1200px;
   
   
 }
@@ -124,8 +125,8 @@ img {
 
 #fundo_arq{
   background:url("../assets/blood.jpg");
-   margin-top: 117px;
-  height: 100%;
+  margin-top: 117px;
+  height: 200%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -141,6 +142,15 @@ img {
 }
 
 
+@media only screen and (max-width: 600px) {
+  .Arq_Jogos{
+    width:200px;
+    font-size:1EM;
+  }
+  #fundo_arq{
+   background: white;
+  }
 
+}
 
 </style>
