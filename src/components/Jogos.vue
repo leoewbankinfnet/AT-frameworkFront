@@ -123,14 +123,21 @@ img {
 }
 
 #fundo_arq{
-  background:url("../assets/fogo.jpeg");
-  background-position: fixed;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  
-
-  height: 100vh;
-  background-repeat: inherit;
+  background:url("../assets/blood.jpg");
+   margin-top: 117px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position-y: 0;
+	opacity: 1;
+	color: #010102;
+  background-attachment: fixed;
 }
 
 

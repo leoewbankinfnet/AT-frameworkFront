@@ -36,7 +36,7 @@
       <br />
       <label for="img">Imagem:</label>
       <br/>
-      <input type="link" id="img" name="img"  required v-model="addJogo.img" />
+      <input type="url" id="img" name="img"  required v-model="addJogo.img" />
       <br />
       <button type="submit">Submit</button>
 
@@ -76,18 +76,21 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Life+Savers&display=swap');
 
-#addd, #form{
+#addd{
   margin:0 auto;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%);
-  margin-top:30px;
-  
+}
+ #form{
+  margin:0 auto;
+  background:black;
 }
 
 #form{
   padding:5px;
   justify-content:space-around;
-  width:1500px;;
+  width:1400px;
+
 }
 #btn_acesso{
   font-size:1.5Em;
@@ -96,8 +99,6 @@ export default {
   width:100px;
   text-align: center;
   cursor: pointer;
-
-
   border-radius: 15px;
   border-radius:50%;
   font-family: 'Life Savers', cursive;
