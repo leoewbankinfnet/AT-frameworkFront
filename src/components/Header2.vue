@@ -21,23 +21,38 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Demon';
+  src: url('../assets/demon_killer/Demon Killer Personal Use.ttf');
+}
+
+@font-face {
+  font-family: 'Blood';
+  src: url('../assets/blood_thirst/Blood Thirst.ttf');
+}
+@font-face {
+  font-family: 'Zombie';
+  src: url('../assets/curse_of_the_zombie/Curse of the Zombie.ttf');
+}
 
 .header{
-  display: block;
+  display: flex;
   width: auto;
-  height: 40px;
+  height: 10px;
+  
 }
 
 #logo{
-  width:12%;
-  margin-left: 0;
+  width:10%;
+  margin-left: 0px;
   border-radius: 99%;
-  align-items:left;
+  align-items:center;
   transition: 0.5s;
 }
 
 
 .navbar{
+  display:flex;
   background-color: #2f4f4f!important;
   overflow: hidden;
   position: fixed; /* Sticky/fixed navbar */
@@ -57,24 +72,25 @@ ul.navbar-nav {
 
 a{
   float: left;
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 4px;
 }
 
 #Logo-titulo{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 250%;
-  padding: 10px;
+  padding: 5px;
   transition: 0.5s;
   text-align:center;
   margin:0 auto;
+  color: white;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   #Logo-titulo {
-    font-size:1.5EM;
+    font-size:1.1EM;
     padding:6px;
   }
   #logo{

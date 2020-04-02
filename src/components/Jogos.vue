@@ -10,7 +10,7 @@
        <div v-for ="jogos in allJogos" :key="jogos.id" class="Cartas">
      
       <b-card
-          :title="jogos.nome"
+          
           :img-src="jogos.img"
           :img-alt="jogos.nome"
           img-top
@@ -20,16 +20,20 @@
           :style="jogos.nota>7?'border:5px solid green;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'
           :jogos.nota<5?' background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;border:5px solid red;'
           :'border:5px solid yellow;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'"
-         
+
           >
+
+          <h4> {{jogos.nome}}</h4>
         <b-card-text>
+             
              <router-link
               tag='h5'
               class="jogos-title"
               :to="{name:'jogos', params:{id:jogos.id}}">
-              <b-button id="btn_det"> Detalhes </b-button>
-              
+              <i title="Detalhes"><img src='../assets/eye.jpg' id='btn_det'/></i>
              </router-link>
+             
+             <i @click='removeJogo(jogos.id)' title="Remover"><img src='../assets/litterbox.jpg' id='rem'/> </i>
         </b-card-text>
       </b-card>
        </div>
@@ -55,7 +59,7 @@ export default {
   },
   props: {},
   methods:{
-    ...mapActions(["fetchJogos"])
+    ...mapActions(["fetchJogos", "removeJogo"])
   },
   computed:
     mapGetters(["allJogos"]),
@@ -68,8 +72,14 @@ export default {
 </script>
 
 <style scoped>
+
+
 h3 {
   margin: 40px 0 0;
+}
+h4{
+  margin-top:0px;
+  font-size:0.09EM;
 }
 ul {
   list-style-type: none;
@@ -94,17 +104,23 @@ a {
   width:1200px;
   
   
+  
 }
 img {
-  height:305px;
+  height:60%;
 }
 .Cartas{
   display: flex;
   margin:5px;
   text-align:center;
-  font-family:"Beckman-free";
-  height:450px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 10rem;
+  height:300px;
+  width:150px;
+  
+  
 }
+
 #info_card{
   display:flex;
   justify-content:center;
@@ -116,17 +132,33 @@ img {
 
 #btn_det{
     position: absolute;
-   
-    width: 100px;
-    margin-left: -50px;
+    font-size:0.5EM;
+    width: 50px;
+    height:50px;
+    margin-left: -60px;
     bottom:0px;
-    margin-bottom:10px;  
+    margin-bottom:5px;  
+    border-radius:50%;
+    cursor: pointer;
+}
+
+#rem{
+    width:50px;
+    height:50px;
+    position: absolute;
+    margin-left: 10px;
+    bottom:0px;
+    margin-bottom:5px;  
+    border-radius:50%;
+    cursor: pointer;
+
+
 }
 
 #fundo_arq{
   background:url("../assets/blood.jpg");
-  margin-top: 117px;
-  height: 200%;
+   margin-top: 117px;
+  height: 110vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -139,6 +171,9 @@ img {
 	opacity: 1;
 	color: #010102;
   background-attachment: fixed;
+}
+.zoom{
+  zoom:80%;
 }
 
 

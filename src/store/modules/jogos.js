@@ -38,7 +38,7 @@ const actions = {
 const mutations = {
     setJogos: (state) => state.jogos,
     novoJogo:(state,jogo) => state.jogos.push(jogo),
-    removeJogo:(state,id) => (state.jogos==state.jogos.filter(t=> t.id !==id)),
+    deletarJogo:(state,id) => (state.jogos=state.jogos.filter(t=> t.id !==id)),
     atualizarJogo:(state,attJogo)=> { 
         const ind = state.jogos.findIndex(t=> t.id == attJogo.id)
         if (ind !==-1){

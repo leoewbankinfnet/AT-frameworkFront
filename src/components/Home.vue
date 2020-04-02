@@ -43,14 +43,16 @@ h1 {
 h2{
   border:1px white;
   text-align:center;
-  background-color:rgb(147, 220, 233);
+  background-color:black;
   width:400px;
   margin:0 auto;
-  color:rgb(168, 101, 101);
+  color:white;
   border-radius:10px;
   box-shadow: 0 5px pink;
   font-family: 'Life Savers', cursive;
   padding:3px;
+  opacity:0.8;
+  margin-top:-15px;
   }
 
 h3 {
@@ -90,6 +92,7 @@ a {
   border-radius:50%;
   font-family: 'Life Savers', cursive;
   opacity:0.8;
+  margin-top:-10px;
 }
 #btn_acesso:hover{
   background-color: rgb(247, 166, 178);
@@ -104,7 +107,7 @@ a {
 
 .home{
 margin-top: 117px;
-height: 90vh;
+height: 100vh;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 text-align: center;
@@ -120,11 +123,20 @@ color: #010102;
 background-attachment: fixed;
 
 }
+.zoom{
+  zoom:80%;
+}
+
 
 @media only screen and (max-width: 400px) {
   #btn_acesso{
-    width:30%;
+    width:27%;
     font-size:1EM;
+    padding: 15px 30px;
+  }
+  h2{
+    width:200px;
+    font-size:1.2EM;
   }
 
 }

@@ -30,6 +30,7 @@
       <br/>
       <input type="text" id="console" name="console"  required v-model="addJogo.console" />
       <br />
+      <br/>
       <label for="nota">Nota:</label>
       <br />
       <input type="number" id="nota" name="nota" min="0" max='10' required v-model="addJogo.nota" />
@@ -73,7 +74,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Life+Savers&display=swap');
 
 @font-face {
@@ -85,6 +86,10 @@ export default {
   font-family:'Bathrind' ;
   src: url('../assets/bathrind/Bathrind.otf');
 }
+h2{
+  margin-bottom:-10x;
+    
+}
 
 #addd{
   margin:0 auto;
@@ -95,25 +100,29 @@ export default {
  #form{
   margin:0 auto;
   background:black;
-}
-
-#form{
+  display:flex;
   padding:5px;
   justify-content:space-around;
-  width:1400px;
-
+  width:1300px;
 }
+
 #btn_acesso{
   font-size:1.5Em;
   background-color:mediumseagreen; 
   color:black;
-  width:100px;
+  width:90px;
   text-align: center;
   cursor: pointer;
   border-radius: 15px;
   border-radius:50%;
   font-family: 'Life Savers', cursive;
   margin-bottom:5px;
+}
+@media only screen and (max-width: 600px) {
+  #addd{
+    font-size:1.1EM;
+  }
+
 }
 
 </style>

@@ -72,9 +72,9 @@ a{
   margin:0 auto;
 }
 
-@media only screen and (max-width: 400px) {
-  #Logo-titulo {
-    font-size:1.5EM;
+@media only screen and (max-width: 600px) {
+ #Logo-titulo {
+    font-size:1.1EM;
     padding:6px;
   }
   #logo{

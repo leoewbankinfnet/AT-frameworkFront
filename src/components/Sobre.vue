@@ -48,38 +48,50 @@ h2{
 }
 
 p{
-  color:white;
+   color:white;
    font-family: 'Life Savers', cursive;
    font-size:1.5EM;
    text-align:justify;
 }
 
-#texto{
+.texto{
   margin:0 auto;
   display:block;
   width: 70%;
   margin-bottom:5px;
   text-align:justify;
+  opacity:1!important;
+
 }
 .areasobre{
-  background-color:rgb(129, 212, 245);
+  background-color:black;
   padding:2px;
   width:70%;
   text-align:center;
   margin:0 auto;
   border-radius:15px;
+  opacity:0.8;
+  margin-top:-15px;
 }
+
+
 
 @media only screen and (max-width: 400px) {
   .areasobre{
-    width:100%;
+    width:80%;
     font-size:1EM;
+    text-align:center;
+    margin:0 auto;
+    margin-bottom:-5px;
   }
   h1{
       font-size:30px;
   }
   h2{
       font-size:20px;
+  }
+  p{
+    font-size:1EM;
   }
 
 }
