@@ -24,7 +24,16 @@
       <br />
       <label for="genero">Genero:</label>
       <br />
-      <input type="text" id="genero" name="genero" required v-model="addJogo.genero" />
+      <select  id="genero" name="genero" required v-model="addJogo.genero" >
+      <option value='Ação'>Ação</option>
+      <option value="Sobrevivência">Sobrevivência</option>
+      <option value="Aventura">Aventura</option>
+      <option value="Terror">Terror</option>
+      <option value="FPS">FPS</option>
+
+
+      
+      </select>
       <br />
        <label for="console">Console:</label>
       <br/>
@@ -54,10 +63,10 @@ export default {
       mostrarJogos: false,
       addJogo :{
         nome: "",
-        genero: "",
+        genero: null,
         nota: "",
         img:"",
-        console:"",
+        console:null,
       }
     };
   },
