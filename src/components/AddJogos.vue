@@ -17,14 +17,14 @@
 
 
 
-  <form @submit.prevent="onSubmit" v-if="mostrarJogos" class="form-inline" id="form">
+  <b-form @submit.prevent="onSubmit" v-if="mostrarJogos" class="form-inline" id="form">
       <label for="name">Nome:</label>
       <br />
-      <input type="text" id="nome" name="nome" required v-model="addJogo.nome" />
+      <input type="text" id="nome" name="nome" placeholder="Insira o nome do jogo" required v-model="addJogo.nome" />
       <br />
       <label for="genero">Genero:</label>
       <br />
-      <select  id="genero" name="genero" required v-model="addJogo.genero" >
+      <select  id="genero" name="genero"  required v-model="addJogo.genero" >
       <option value='Ação'>Ação</option>
       <option value="Sobrevivência">Sobrevivência</option>
       <option value="Aventura">Aventura</option>
@@ -37,7 +37,7 @@
       <br />
        <label for="console">Console:</label>
       <br/>
-      <input type="text" id="console" name="console"  required v-model="addJogo.console" />
+      <input type="text" id="console" name="console" placeholder="Insira a plataforma" required v-model="addJogo.console" />
       <br />
       <br/>
       <label for="nota">Nota:</label>
@@ -46,11 +46,11 @@
       <br />
       <label for="img">Imagem:</label>
       <br/>
-      <input type="url" id="img" name="img"  required v-model="addJogo.img" />
+      <input type="url" id="img" name="img" placeholder="Insira um link" required v-model="addJogo.img" />
       <br />
       <button type="submit">Submit</button>
 
-  </form>
+  </b-form>
   </div>
 </template>
 
