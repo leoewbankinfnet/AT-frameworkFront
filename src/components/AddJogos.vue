@@ -8,7 +8,7 @@
 
      <div id="addd">
     
-      <h2> Adicione um jogo </h2>
+      <h2 id='btn_acesso'> Adicione um jogo </h2>
       <br>
       <a v-on:click='mostrarArq'> <img id="btn_acesso" src="../assets/cat_face.jpg" /> </a>
       
@@ -30,9 +30,6 @@
       <option value="Aventura">Aventura</option>
       <option value="Terror">Terror</option>
       <option value="FPS">FPS</option>
-
-
-      
       </select>
       <br />
        <label for="console">Console:</label>
@@ -46,7 +43,7 @@
       <br />
       <label for="img">Imagem:</label>
       <br/>
-      <input type="url" id="img" name="img" placeholder="Insira um link" required v-model="addJogo.img" />
+      <input type="url" id="url" name="url" placeholder="Insira um link" required v-model="addJogo.img" />
       <br />
       <button type="submit">Submit</button>
 
