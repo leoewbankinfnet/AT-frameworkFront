@@ -36,7 +36,7 @@
              
              <i @click='removeJogo(jogos.id)' title="Remover"><img src='../assets/litterbox.jpg' id='rem'/> </i>
              <i @click="$bvModal.show(jogos.id)" id='bot_detalhes'><img src='../assets/pent.jpg' id='ed'/></i>
-             <b-modal  :key="jogos.id" :id="jogos.id" :title='jogos.nome' centered ok-only ok-title="Fechar" ok-variant="danger " auto-focus-button="ok">
+             <b-modal  :key="jogos.id" :id="jogos.id" title='Editar' centered ok-only ok-title="Fechar" ok-variant="danger " auto-focus-button="ok">
                <b-card
                 
                 img-top
@@ -44,17 +44,12 @@
                 style="max-width: 20rem;margin:0 auto;"
                 class="md-2"
                 >
-                  <b-card-text id='info' style="font-size:10EM;text-align:center;">
-                      <h4>Nome:{{jogos.nome}} </h4>
-                      <h4>Nota:{{jogos.nota}} </h4>
-                      <h4>Console:{{jogos.console}} </h4>
-                      <h4>Genero:{{jogos.genero}} </h4>
-                  </b-card-text>
+                  
           
 
             <b-card-text style="width:200px;margin:0 auto;">
               <b-form @submit.prevent="onSubmit"  id="form">
-                    <b-form-group
+                   <!--  <b-form-group
                       id="jogos.nome"
                       label="Nome do jogo: "
                       label-for="jogos.nome"
@@ -64,7 +59,11 @@
                         v-model="attJogo.nome"
                         :value='jogos.nome'
                       ></b-form-input>
-                    </b-form-group>
+                    </b-form-group> -->
+                    <p> Nome: </p>
+                    <select v-model='attJogo.nome' style="color:black;" label="Nome">
+                            <option v-for ="jogos in allJogos" :key="jogos.id" > {{jogos.nome}} </option>
+                    </select>
                     
                     <!-- <b-form-group
                       id="jogos.genero"
@@ -154,14 +153,14 @@ export default {
   },
    data() {
     return {
+
       attJogo:{
         nome:'',
         genero: null,
         generos: [
           { value: null, text: 'Selecione uma opção' },"Ficção","Sobrevivência", "Ação", "Aventura","FPS"], show:true,
         nota: "",
-
-        
+       
       }
     };
   },
@@ -178,6 +177,12 @@ export default {
     created(){
       this.fetchJogos()
     },
+   props:{}
+   
+
+      
+      
+    
     
 }
 
