@@ -32,19 +32,14 @@
         ></b-form-input>
       </b-form-group>
       
-       <b-form-group
-        id="input-group-2"
-        label="Genero do jogo "
-        label-for="input-2"
-      >
-        <b-form-input
-          id="input-2"
-          v-model="addJogo.genero"
-          type="text"
-          required
-          placeholder="Insira o gênero do jogo"
-        ></b-form-input>
-      </b-form-group>
+        <b-form-group id="input-group-3" label="Genero:" label-for="input-3">
+                        <b-form-select
+                          id="jogos.genero"
+                          v-model="addJogo.genero"
+                          :options="addJogo.generos"
+                          required
+                        ></b-form-select>
+        </b-form-group>
 
       <b-form-group
         id="input-group-3"
@@ -139,6 +134,8 @@ export default {
         nota: "",
         img:"",
         console:null,
+        generos: [
+          { value: null, text: 'Selecione uma opção' },"Ficção","Sobrevivência", "Ação", "Aventura","FPS"], show:true
       }
     };
   },

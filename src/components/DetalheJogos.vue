@@ -4,12 +4,12 @@
 
 
     <section id="card">
-      <h1>{{jogosID(id).nome}}</h1>
+      <h1 >{{jogosID(id).nome}}</h1>
        <b-card 
        :img-src="jogosID(id).img"
        :img-alt="jogosID(id).nome"
        id="jogo_img"
-       style="max-width: 15rem;"
+       style="max-width: 14rem;"
       class="md-2"
           :style="jogosID(id).nota>7?'border:5px solid green;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'
           :jogosID(id).nota<5?' background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;border:5px solid red;'
@@ -28,10 +28,10 @@
     
        
     </section>
-    
-    <b-button href="/arquivo" id="voltar"> Voltar </b-button>
+     <a href='/arquivo'><img src='../assets/return.jpg' id='vol_img'/></a>
+   
     </div>
-      
+    
 
   </div>
 </template>
@@ -65,14 +65,27 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Double';
+  src: url('../assets/double_feature/DoubleFeature20.ttf')
+}
+
+@font-face {
+  font-family: "WhoAsks";
+  src: url("../assets/who_asks_satan/who asks satan.ttf");
+}
+
+
 h1{
   color:white;
+  font-family: "WhoAsks";
+  font-size:5EM;
 }
 h4{
   font-size:1EM;
 }
 #jogo_img{
-  width:300px;
+  width:280px;
   margin: 0 auto;
   
 }
@@ -83,11 +96,19 @@ h4{
   font-size:1.3EM;
   margin-bottom:10px;
 }
+#vol_img{
+  width:80px;
+  height:80px;
+  border-radius:50px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
 img{
-  height: 280px;
+  height: 260px;
 }
 #fundo{
-  background:black;
+  background:url('../assets/HELL.jpg');
   margin-top: -60px;
   min-height:100vh;
   height: auto;
@@ -108,13 +129,14 @@ img{
   display: flex;
   text-align:center;
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 1.2EM;
-  height:450px;
+  font-size: 1EM;
+  height:400px;
   width:300px;
 }
 
 #info{
   margin-top:10px;
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -123,6 +145,8 @@ img{
   }
   h1{
     font-size:1.8EM;
+    font-style:'DoubleFeat';
+    
   }
 }
 </style>
