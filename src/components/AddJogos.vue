@@ -129,7 +129,7 @@ export default {
     return {
       mostrarJogos: false,
       addJogo :{
-        nome: "",
+        nome: '',
         genero: null,
         nota: "",
         img:"",

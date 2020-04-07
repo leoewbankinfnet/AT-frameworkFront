@@ -44,6 +44,7 @@ import {mapGetters, mapActions} from "vuex"
 export default {
     name:"DetalheJogos",
     component:{
+      
      
       
     },

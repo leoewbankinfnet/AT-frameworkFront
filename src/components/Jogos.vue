@@ -44,6 +44,12 @@
                 style="max-width: 20rem;margin:0 auto;"
                 class="md-2"
                 >
+                  <b-card-text id='info' style="font-size:10EM;text-align:center;">
+                      <h4>Nome:{{jogos.nome}} </h4>
+                      <h4>Nota:{{jogos.nota}} </h4>
+                      <h4>Console:{{jogos.console}} </h4>
+                      <h4>Genero:{{jogos.genero}} </h4>
+                  </b-card-text>
           
 
             <b-card-text style="width:200px;margin:0 auto;">
@@ -56,7 +62,8 @@
                       <b-form-input
                         id="jogos.nome"
                         v-model="attJogo.nome"
-                                 ></b-form-input>
+                        :value='jogos.nome'
+                      ></b-form-input>
                     </b-form-group>
                     
                     <!-- <b-form-group
@@ -153,6 +160,7 @@ export default {
         generos: [
           { value: null, text: 'Selecione uma opção' },"Ficção","Sobrevivência", "Ação", "Aventura","FPS"], show:true,
         nota: "",
+
         
       }
     };
@@ -169,7 +177,8 @@ export default {
     mapGetters(["allJogos","jogosID"]),
     created(){
       this.fetchJogos()
-    }
+    },
+    
 }
 
 
@@ -227,6 +236,7 @@ img{
   position:fixed;
   bottom:0px;
 }
+
 
 #btn_det{
     position: absolute;
