@@ -107,7 +107,8 @@ a {
 
 .home{
 margin-top: 117px;
-height: 100vh;
+min-height: 110vh;
+height:100%;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 text-align: center;
@@ -123,20 +124,23 @@ color: #010102;
 background-attachment: fixed;
 
 }
-.zoom{
-  zoom:80%;
-}
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 640px) {
   #btn_acesso{
-    width:27%;
+    width:25%;
     font-size:1EM;
     padding: 15px 30px;
+    margin-bottom:10px;
   }
   h2{
     width:200px;
     font-size:1.2EM;
+  }
+  .home{
+    margin-top:50px;
+    background:white;
+    
   }
 
 }

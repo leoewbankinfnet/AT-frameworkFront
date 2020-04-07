@@ -76,13 +76,14 @@ p{
 
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 640px) {
   .areasobre{
     width:80%;
     font-size:1EM;
     text-align:center;
     margin:0 auto;
     margin-bottom:-5px;
+    margin-top: 10px;
   }
   h1{
       font-size:30px;

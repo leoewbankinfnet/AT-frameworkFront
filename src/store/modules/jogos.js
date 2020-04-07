@@ -30,8 +30,14 @@ const actions = {
       removeJogo({commit}, id){
           commit("deletarJogo",id)
       },
-      atualizarJogo({commit},attJogo){
-          commit("atualizarJogo",attJogo)
+      atualizarJogos({commit},attJogo){
+          const resp={
+              "nome":attJogo.nome,
+              "genero":attJogo.genero,
+              "nota":attJogo.nota,
+              
+          }
+          commit("atualizarJogo",resp)
       },
 }
 
@@ -39,12 +45,16 @@ const mutations = {
     setJogos: (state) => state.jogos,
     novoJogo:(state,jogo) => state.jogos.push(jogo),
     deletarJogo:(state,id) => (state.jogos=state.jogos.filter(t=> t.id !==id)),
-    atualizarJogo:(state,attJogo)=> { 
-        const ind = state.jogos.findIndex(t=> t.id == attJogo.id)
-        if (ind !==-1){
-            state.jogos.splice(ind,1,attJogo)
+    atualizarJogo:(state,edit_jogo)=> { 
+        state.jogos.forEach(element =>{
+            if(element.nome === edit_jogo.nome){
+                element.genero = edit_jogo.genero,
+                element.nota = edit_jogo.nota
+                
+            }
+        })
         }
-    },
+
     
 }
 

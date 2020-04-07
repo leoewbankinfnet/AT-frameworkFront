@@ -9,7 +9,7 @@
        :img-src="jogosID(id).img"
        :img-alt="jogosID(id).nome"
        id="jogo_img"
-       style="max-width: 16rem;"
+       style="max-width: 15rem;"
       class="md-2"
           :style="jogosID(id).nota>7?'border:5px solid green;background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;'
           :jogosID(id).nota<5?' background: linear-gradient(0deg, rgba(0,0,0,1) 26%, rgba(255,0,0,1) 100%, rgba(255,27,27,1) 100%, rgba(255,0,0,1) 100%); color:white;border:5px solid red;'
@@ -21,11 +21,15 @@
           <h4>Console:{{jogosID(id).console}} </h4>
           <h4>Genero:{{jogosID(id).genero}} </h4>
        </b-card-text>
+
+      
        </b-card>
 
-
-       <b-button href="/arquivo" id="voltar"> Voltar </b-button>
+    
+       
     </section>
+    
+    <b-button href="/arquivo" id="voltar"> Voltar </b-button>
     </div>
       
 
@@ -34,9 +38,15 @@
 
 <script>
 import {mapGetters, mapActions} from "vuex"
+
+
+
 export default {
     name:"DetalheJogos",
-    component:{},
+    component:{
+     
+      
+    },
     methods:{
     ...mapActions(["fetchJogos"])
   },
@@ -62,24 +72,25 @@ h4{
   font-size:1EM;
 }
 #jogo_img{
-  width:17%;
+  width:300px;
   margin: 0 auto;
-  padding:3 px;
-
-
-
+  
 }
 #voltar {
   margin-top:30px;
   background-color:red;
-  width:10%;
+  width:200px;
   font-size:1.3EM;
+  margin-bottom:10px;
 }
-
+img{
+  height: 280px;
+}
 #fundo{
   background:black;
-   margin-top: -60px;
-  height: 100vh;
+  margin-top: -60px;
+  min-height:100vh;
+  height: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -93,10 +104,25 @@ h4{
 	color: #010102;
   background-attachment: fixed;
 }
+.card{
+  display: flex;
+  text-align:center;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1.2EM;
+  height:450px;
+  width:300px;
+}
+
+#info{
+  margin-top:10px;
+}
 
 @media only screen and (max-width: 600px) {
   #addd{
     font-size:0.6EM;
+  }
+  h1{
+    font-size:1.8EM;
   }
 }
 </style>

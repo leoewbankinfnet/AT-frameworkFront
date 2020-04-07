@@ -4,7 +4,7 @@
   <div class="header">
       <b-navbar id="navbar" toggleable="lg" type="dark" variant="info">
         <b-navbar-brand id="Logo-titulo" href="/"><img src="../assets/logo.jpg" id="logo"> Jogoteca Ferozmente Animal</b-navbar-brand>
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        
       </b-navbar>
     </div> 
 
@@ -25,12 +25,11 @@ export default {
 .header{
   display: block;
   width: auto;
-  height: 40px;
+  height: 30px;
 }
 
 #logo{
   width:15%;
-  margin-left: 0;
   border-radius: 99%;
   align-items:left;
   transition: 0.5s;
@@ -75,14 +74,15 @@ a{
 @media only screen and (max-width: 600px) {
  #Logo-titulo {
     font-size:1.1EM;
-    padding:6px;
+
   }
   #logo{
     width:20%;
   }
   .header{
-    height:20px;
+    height:-10px;
   }
+ 
 }
 
 
