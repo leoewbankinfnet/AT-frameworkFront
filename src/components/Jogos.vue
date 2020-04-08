@@ -166,7 +166,7 @@ export default {
   },
 
   methods:{
-    ...mapActions(["fetchJogos", "removeJogo","atualizarJogos"]),
+    ...mapActions(["removeJogo","atualizarJogos"]),
 
      onSubmit() {
       this.atualizarJogos(this.attJogo);
@@ -175,7 +175,7 @@ export default {
   computed:
     mapGetters(["allJogos","jogosID"]),
     created(){
-      this.fetchJogos()
+    
     },
    props:{}
    

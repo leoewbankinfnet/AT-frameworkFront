@@ -83,6 +83,8 @@
           placeholder="Insira um link de imagem"
         ></b-form-input>
       </b-form-group>
+      <label for="example-datepicker">Data que zerou:</label>
+         <b-form-datepicker id="example-datepicker" v-model="addJogo.data" class="mb-2"></b-form-datepicker>
       <button type="submit">Submit</button>
      
      
@@ -133,6 +135,7 @@ export default {
         genero: null,
         nota: "",
         img:"",
+        data:'',
         console:null,
         generos: [
           { value: null, text: 'Selecione uma opção' },"Ficção","Sobrevivência", "Ação", "Aventura","FPS"], show:true

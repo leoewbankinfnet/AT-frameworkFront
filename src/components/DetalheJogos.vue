@@ -20,6 +20,7 @@
           <h4>Nota:{{jogosID(id).nota}} </h4>
           <h4>Console:{{jogosID(id).console}} </h4>
           <h4>Genero:{{jogosID(id).genero}} </h4>
+          <h4>Zerou em: {{jogosID(id).data}}</h4>
        </b-card-text>
 
       
@@ -49,12 +50,12 @@ export default {
       
     },
     methods:{
-    ...mapActions(["fetchJogos"])
+    ...mapActions([])
   },
   computed:
     mapGetters(["allJogos","jogosID"]),
     created(){
-      this.fetchJogos()
+      
     },
      data: function(){
         return{ 
@@ -131,7 +132,7 @@ img{
   text-align:center;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 1EM;
-  height:400px;
+  height:420px;
   width:300px;
 }
 
@@ -145,7 +146,7 @@ img{
     font-size:0.6EM;
   }
   h1{
-    font-size:1.8EM;
+    font-size:3EM;
     font-style:'DoubleFeat';
     
   }

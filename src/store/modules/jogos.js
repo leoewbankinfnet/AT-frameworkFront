@@ -1,7 +1,7 @@
 const state = {
-    jogos: [{"id":"1","nome":"GTA V","genero":"Ação", "nota":"10","img":"https://http2.mlstatic.com/gta-5-gta-v-ps4-pronta-entrega-em-portugus-midia-fisica-D_NQ_NP_629809-MLB32515401168_102019-F.jpg","console":"Playstation 4"},
-            {"id":"2","nome":"Binding of Isaac Afterbirth","genero":"Ação","nota":"6","img":"https://s3.amazonaws.com/comparegame/thumbnails/42814/large.jpg", "console":"Nintendo Switch"},
-            {"id":"3","nome":"Agony","genero":"Sobrevivência","nota":"3","img":"https://s3.amazonaws.com/comparegame/thumbnails/43916/large.jpg", "console":"Playstation 4"}
+    jogos: [{"id":"1","nome":"GTA V","genero":"Ação", "nota":"10","img":"https://http2.mlstatic.com/gta-5-gta-v-ps4-pronta-entrega-em-portugus-midia-fisica-D_NQ_NP_629809-MLB32515401168_102019-F.jpg","console":"Playstation 4","data":"2019-05-11"},
+            {"id":"2","nome":"Binding of Isaac Afterbirth","genero":"Ação","nota":"6","img":"https://s3.amazonaws.com/comparegame/thumbnails/42814/large.jpg", "console":"Nintendo Switch","data":"2019-05-11"},
+            {"id":"3","nome":"Agony","genero":"Sobrevivência","nota":"3","img":"https://s3.amazonaws.com/comparegame/thumbnails/43916/large.jpg", "console":"Playstation 4","data":"2019-05-11"}
     
     ]
 }
@@ -23,7 +23,8 @@ const actions = {
             "genero":add_jogo.genero,
             "nota":add_jogo.nota,
             "img":add_jogo.img,
-            "console":add_jogo.console
+            "console":add_jogo.console,
+            "data":add_jogo.data
         }
         commit("novoJogo",response)   
       },
